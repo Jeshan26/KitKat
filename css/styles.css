@@ -1,0 +1,517 @@
+/*  Global styling  */
+body {
+	margin: 0px;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+/*  set the text properties */
+h1 {
+	font-family: 'Agdasima', sans-serif;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+p,
+a,
+li,
+span {
+	font-size: 1.2em;
+	font-family: 'Montserrat', sans-serif;
+	text-decoration: none;
+}
+
+/*  css for header */
+header {
+	z-index: 999;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 80px;
+	background-color: #D7001D;
+	width: 100%;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25), 0 1px 3px rgba(0, 0, 0, 0.15);
+	transition: all .25s linear;
+}
+
+header div {
+	width: auto;
+	height: 80%;
+	flex-grow: 1;
+	padding: 10px;
+}
+
+header div img {
+	width: auto;
+	height: 100%;
+}
+
+header menu {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+header menu li {
+	padding: 0 10px;
+}
+
+header>nav>menu>li>a {
+	font-family: 'Permanent marker', sans-serif;
+}
+
+header menu li a {
+	color: #f6f4f5;
+}
+
+header>nav>menu>li>a:nth-child(1):hover {
+	border-bottom: 3px solid #f6f4f5;
+}
+
+/* when scroll > 400 */
+.scrollHeader {
+	height: 50px;
+	background-color: rgb(255, 255, 255);
+}
+
+.scrollHeader a {
+	color: #D7001D;
+}
+
+.scrollHeader a:nth-child(1):hover {
+	border-bottom: 3px solid #D7001D;
+}
+
+
+/* Masthead video */
+.video-masthead {
+	height: 100vh;
+}
+
+.video-masthead h1 {
+	font-family: 'Montserrat', sans-serif;
+	top: 70%;
+	font-size: 2.5rem;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+	text-align: center;
+	width: 100%;
+	position: absolute;
+}
+
+.video-masthead p {
+	top: 80%;
+	color: #FFFFFF;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+}
+
+.video-masthead button {
+	top: 90%;
+	text-align: center;
+	width: auto;
+	left: 48%;
+	position: absolute;
+	padding: 0.5rem;
+}
+
+.video-masthead button {
+	background-color: #B5000C;
+	color: white;
+	border: none;
+	padding: 12px 20px;
+	font-size: 1em;
+	font-weight: bold;
+	border-radius: 5px;
+}
+
+/* animation to move the button downwards */
+@keyframes btn-move-down {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(0.3rem);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.video-masthead button i {
+	animation: btn-move-down 1.3s ease-in-out infinite;
+}
+
+
+#background-video {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+}
+
+/* just added a still image when the screen size is small */
+
+@media screen and (max-width:768px) {
+	#background-video {
+		display: none;
+	}
+
+	.video-masthead {
+		background-image: url("../img/still.jpg");
+		background-size: cover;
+	}
+}
+
+/* Product section */
+
+.products {
+	text-align: center;
+	padding: 40px 20px;
+	background-color: #ffffff;
+}
+
+.products h2 {
+	font-size: 2.5em;
+	color: #B5000C;
+	margin-bottom: 30px;
+}
+
+/* this will be responsive grid (autofill) */
+.product-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: 50px;
+	justify-content: center;
+	justify-items: center;
+	align-items: stretch
+}
+
+/* each product */
+.product-item {
+	background-color: rgb(255, 255, 255);
+	cursor: pointer;
+	border-radius: 10px;
+	padding: 20px;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	max-width: 300px;
+}
+
+.product-item img {
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+	margin-bottom: 15px;
+}
+
+.product-item h3 {
+	font-size: 1.5em;
+	color: #B5000C;
+	margin-bottom: 10px;
+}
+
+.product-item p {
+	font-size: 1em;
+	color: #333;
+}
+
+/* Hover effect on each product */
+.product-item:hover {
+	transform: translateY(-15px);
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+	border: 10px solid red;
+	transition: all 0.4s ease;
+}
+
+
+.product-item button {
+	background-color: #B5000C;
+	color: white;
+	border: none;
+	padding: 12px 20px;
+	font-size: 1em;
+	font-weight: bold;
+	border-radius: 5px;
+	width: 100%;
+}
+
+.product-item button:hover {
+	background-color: #92000A;
+	cursor: pointer;
+	transform: scale(1);
+}
+
+
+/* Best seller section */
+.bestSellers {
+	text-align: center;
+	padding: 2rem;
+	background-color: #92000A;
+}
+
+.bestSellers h2 {
+	font-size: 2rem;
+	color: #ffffff;
+}
+
+.bestSeller-container p {
+	font-size: 1rem;
+	color: #ffffff;
+	margin-top: 0.5rem;
+	font-weight: 500;
+}
+
+.bestSeller-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+	flex-wrap: wrap;
+	text-align: center;
+}
+
+.bestSeller-container div {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* svg effect around best selling images. */
+.bestSeller-container svg {
+	position: absolute;
+	height: 100%;
+	stroke: #ffffff;
+
+}
+
+div.bestSeller-container>div rect {
+	fill: none;
+	stroke-width: 4;
+	stroke-dasharray: 422, 0;
+	transition: all .50s linear;
+}
+
+/* borders to sides to create hover effect */
+div.bestSeller-container>div:hover rect {
+	stroke-dasharray: 116, 500;
+	stroke-dashoffset: 50;
+}
+
+.bestSeller-container span {
+	display: inline-flex;
+	align-items: center;
+}
+
+.bestSeller-container img {
+	width: 100%;
+	height: auto;
+}
+
+/* Button */
+.btn-1 a {
+	display: inline-block;
+	margin-top: 1.5rem;
+	padding: 0.8rem 1.5rem;
+	font-size: 1rem;
+	font-weight: bold;
+	color: white;
+	background-color: #d32f2f;
+	border-radius: 8px;
+	text-decoration: none;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.btn-1 a:hover {
+	background-color: #b71c1c;
+}
+
+/* Adding animation to the button arrow */
+div.btn-1>a>span>i {
+	text-align: center;
+	position: relative;
+	animation: btn-move-right 1s alternate infinite linear;
+}
+
+/* animation to move the btn to right */
+@keyframes btn-move-right {
+	0% {
+		right: 0;
+	}
+
+	50% {
+		right: -5px;
+	}
+
+	100% {
+		right: -10px;
+	}
+}
+
+.customer-reviews {
+
+	text-align: center;
+	background-color: #e5e3e1;
+	padding: 1.25rem;
+	clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+/* Remove clip-path for screens smaller than 768px */
+@media (max-width: 768px) {
+	.customer-reviews {
+		clip-path: none;
+	}
+}
+
+.customer-reviews h2 {
+	color: #000000;
+}
+
+.review-container {
+	display: flex;
+	justify-content: center;
+	gap: 1.25rem;
+}
+
+.review-item {
+	background: white;
+	padding: 1rem;
+	box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+	border-radius: 0.625rem;
+	width: 15rem;
+}
+
+.review-item:hover {
+	border: 5px solid rgb(208, 187, 83);
+	transition: all 0.4s ease;
+}
+
+.review-btn {
+	margin-top: 1.25rem;
+	padding: 0.625rem 1.25rem;
+	background-color: #e3d23b;
+	color: white;
+	border: none;
+	border-radius: 0.3125rem;
+	cursor: pointer;
+	font-size: 1rem;
+}
+
+.review-btn>i {
+	text-align: center;
+	position: relative;
+	animation: btn-move-right 1s alternate infinite linear;
+}
+
+.review-btn:hover {
+	border: 5px solid rgb(208, 187, 83);
+	transition: all 0.4s ease;
+}
+
+/* Footer */
+footer {
+	background-color: #ececec;
+	padding: 15px 0 0 0;
+	text-align: center;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px -4px 20px 0px, rgba(0, 0, 0, 0.69) 0px 5px 20px 0px;
+}
+
+footer>div {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: auto;
+}
+
+footer>div>div {
+	max-width: 300px;
+	padding: 10px;
+	margin: 0;
+
+}
+
+footer h3 {
+	font-size: 1.5rem;
+	margin-top: 0;
+	margin-bottom: 15px;
+	color: #333;
+}
+
+footer p {
+	color: #151515;
+}
+
+footer>div>div>img {
+	width: 150px;
+	height: 100%;
+}
+
+footer>div>div h3 {
+	font-size: 18px;
+	margin: 0 0 10px 0;
+}
+
+footer>div>div>form>input {
+	height: 30px;
+	border: none;
+	margin: 2px 0;
+	background-color: #e0e0e0;
+	border-radius: 5px;
+	transition: background-color 0.3s;
+}
+
+
+footer>div>div>form {
+	display: flex;
+	flex-direction: column;
+}
+
+/* targetting the submit button */
+footer form input[type="submit"] {
+	background-color: #B5000C;
+	color: white;
+	cursor: pointer;
+	margin-top: 10px;
+	font-weight: bold;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	transition: background-color 0.3s;
+}
+
+/* Change background color on hover */
+footer form input[type="submit"]:hover {
+	background-color: #E3000F;
+}
+
+/*  css for bottom section of footer */
+.footer-copyright {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.footer-copyright p {
+	text-align: center;
+	width: 100%;
+	font-size: 12px;
+}
